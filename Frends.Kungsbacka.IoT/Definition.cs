@@ -15,8 +15,9 @@ namespace Frends.Kungsbacka.IoT
         public IoTPayloadDecoder.DeviceModel DeviceModel { get; set; }
 
         /// <summary>
-        /// Device port
+        /// Device port (currently only applicable to NAS)
         /// </summary>
+        [Description("Device port (currently only applicable to NAS)")]
         public int Port { get; set; }
 
         /// <summary>
@@ -25,5 +26,11 @@ namespace Frends.Kungsbacka.IoT
         [DisplayFormat(DataFormatString = "Text")]
         [Description("Payload as a hex string")]
         public string Payload { get; set; }
+
+        /// <summary>
+        /// Result should only contain values and no information about units
+        /// </summary>
+        [Description("Result should only contain values and no information about units")]
+        public bool Compact { get; set; }
     }
 }

@@ -20,14 +20,14 @@ namespace Frends.Kungsbacka.IoT
 			switch (input.DeviceModel)
             {
                 case DeviceModel.Elsys:
-					decoder = DecoderFactory.Create(DeviceModel.Elsys, 0);
-					return decoder.Decode(input.Payload, false);
+					decoder = DecoderFactory.Create(DeviceModel.Elsys, 0); // Port is not used by the Elsys decoder
+					return decoder.Decode(input.Payload, input.Compact);
                 case DeviceModel.Nas10:
-					decoder = DecoderFactory.Create(DeviceModel.Nas10, 0);
-					return decoder.Decode(input.Payload, false);
+					decoder = DecoderFactory.Create(DeviceModel.Nas10, input.Port);
+					return decoder.Decode(input.Payload, input.Compact);
 				case DeviceModel.Nas11:
-					decoder = DecoderFactory.Create(DeviceModel.Nas11, 0);
-					return decoder.Decode(input.Payload, false);
+					decoder = DecoderFactory.Create(DeviceModel.Nas11, input.Port);
+					return decoder.Decode(input.Payload, input.Compact);
 				default:
                     throw new ArgumentException("Unknown device model", nameof(input.DeviceModel));
             }
