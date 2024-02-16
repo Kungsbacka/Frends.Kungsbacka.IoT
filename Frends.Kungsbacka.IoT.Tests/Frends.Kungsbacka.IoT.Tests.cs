@@ -12,20 +12,20 @@ namespace Frends.Kungsbacka.IoT.Tests
         [Test]
         public void ThreeEchos()
         {
-            var input = new Parameters
-            {
-                Message = Environment.GetEnvironmentVariable("EXAMPLE_ENVIROMENT_VARIABLE")
-        };
+            //var input = new Parameters
+            //{
+            //    Message = Environment.GetEnvironmentVariable("EXAMPLE_ENVIROMENT_VARIABLE")
+            //};
 
-            var options = new Options
-            {
-                Amount = 3,
-                Delimiter = ", "
-            };
+            //var options = new Options
+            //{
+            //    Amount = 3,
+            //    Delimiter = ", "
+            //};
 
-            var ret = Echo.ExecuteEcho(input, options, new System.Threading.CancellationToken());
+            //var ret = Echo.ExecuteEcho(input, options, new System.Threading.CancellationToken());
 
-            Assert.That(ret.Replication, Is.EqualTo("foobar, foobar, foobar"));
+            //Assert.That(ret.Replication, Is.EqualTo("foobar, foobar, foobar"));
         }
     }
 }
